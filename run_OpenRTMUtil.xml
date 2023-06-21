@@ -1,0 +1,25 @@
+<!--
+# -*- Buildfile -*-
+# @file  run_OpenRTMUtil.xml
+# @brief Execute RTComponent for "OpenRTMUtil component" 
+# @date  $Date$
+#
+# $Id$
+ -->
+<project name="OpenRTMUtil" default="exec">
+    <property environment="env" />
+    <property name="option" value="" />
+
+    <target name="exec" >
+        <java classname="OpenRTMUtilComp">
+            <classpath>
+                <pathelement location="bin"/>
+                <pathelement location="."/>
+                <fileset dir="${env.RTM_JAVA_ROOT}/jar">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <arg line="${option}" />
+        </java>
+    </target>
+</project> 
