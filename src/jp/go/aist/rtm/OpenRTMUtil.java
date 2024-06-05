@@ -132,10 +132,10 @@ public class OpenRTMUtil implements ModuleInitProc {
     }
     
     public <T> InPort<T> addInPort(String name, DataRef<T> inport) {
-    	InPort<T> inInport = new InPort<T>("in", inport);
+    	InPort<T> inInport = new InPort<T>(name, inport);
     	
     	try {
-    		comp.addInPort("in", inInport);
+    		comp.addInPort(name, inInport);
     	} 
     	catch (Exception e) {
     	   e.printStackTrace();
@@ -146,10 +146,10 @@ public class OpenRTMUtil implements ModuleInitProc {
     }
     
     public <T> OutPort<T> addOutPort(String name, DataRef<T> outport) {
-    	OutPort<T> outOutport = new OutPort<T>("in", outport);
+    	OutPort<T> outOutport = new OutPort<T>(name, outport);
     	
     	try {
-    		comp.addOutPort("in", outOutport);
+    		comp.addOutPort(name, outOutport);
     	} 
     	catch (Exception e) {
     	   e.printStackTrace();
